@@ -25,12 +25,16 @@ body {
 header{
     background-image: 
     linear-gradient(to right bottom, rgba(142, 158, 252, .8),rgba(28, 62, 255, .8)),
-    url('./img/background1.jpg');
+    url('../img/background1.jpg');
     background-size: cover;
     background-position: top;
     position: relative;
     height: 95vh;
-    clip-path: ellipse(65% 58% at 52% 32%);
+}
+
+header{
+    -webkit-clip-path: ellipse(60% 60% at 50% 33%);
+    clip-path: ellipse(60% 60% at 50% 33%);
 }
 
 .text-box{
@@ -38,6 +42,7 @@ header{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 .logo{
@@ -69,3 +74,61 @@ header{
     font-weight: 700;
     letter-spacing: 18px;
 }
+
+.btn,
+.btn:link,
+.btn:visited{
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    font-size: 16px;
+    position: relative;
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 100px;
+    z-index: -1;
+    transition: all .4s;
+}
+
+
+
+
+.btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .2);
+}
+
+.btn:active{
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+.btn-white{
+    color: #777777;
+    background-color: #fff;
+}
+
+.btn-white::after{
+    
+    background-color: #fff;
+}
+
+
+.btn:hover::after{
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+/* .btn-white::after{
+    background-color: #fff;
+} */
